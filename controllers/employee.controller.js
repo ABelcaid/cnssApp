@@ -165,7 +165,7 @@ const getAllEmployee = async (req, res ) =>{
 const employeeById = async (req,res) =>{
 
 
-    let employee = await Employee.findOne({id : req.body.id})
+    let employee = await Employee.findOne({ where: {id: req.params.id} })
 
 
     if (!employee) {
